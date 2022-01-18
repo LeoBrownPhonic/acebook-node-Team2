@@ -5,13 +5,12 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -21,30 +20,20 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: Start MongoDB
-      uses: supercharge/mongodb-github-action@1.7.0
-      with:
-        mongodb-version: ${{ matrix.mongodb-version }}
-<<<<<<< HEAD
-    - name: Cypress run
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.7.0
+        with:
+          mongodb-version: ${{ matrix.mongodb-version }}
+      - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm start:test
           wait-on: http://localhost:3030
-    # - run: npm ci
-    # - run: npm run
-    # - run: npm run start:test
-    - run: npm test
-=======
-    - run: npm ci
-    - run: npm run
-    - run: npm run start:test
-    - run: sleep 10 & npm test
->>>>>>> 891baf7f7fa5c6ecc72c49e1a21cdfbc98295d38
+      - run: npm test
