@@ -31,6 +31,7 @@ jobs:
       uses: supercharge/mongodb-github-action@1.7.0
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
+<<<<<<< HEAD
     - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
@@ -41,3 +42,9 @@ jobs:
     # - run: npm run
     # - run: npm run start:test
     - run: npm test
+=======
+    - run: npm ci
+    - run: npm run
+    - run: npm run start:test
+    - run: sleep 10 & npm test
+>>>>>>> 891baf7f7fa5c6ecc72c49e1a21cdfbc98295d38
