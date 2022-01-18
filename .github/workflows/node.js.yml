@@ -30,9 +30,10 @@ jobs:
         uses: supercharge/mongodb-github-action@1.7.0
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
+      - run: npm run lint    
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
           start: npm run start:test
-          run: npm test
           wait-on: http://localhost:3030  
+      
