@@ -35,4 +35,3 @@ jobs:
         with:
           start: npm run start:test
           wait-on: http://localhost:3030
-      - run: npm test
