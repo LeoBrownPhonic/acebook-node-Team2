@@ -2,11 +2,11 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/acebookDeployW3Team2
+    destination: /home/ec2-user/acebookDeployW3Team2
 permissions:
-  - object: /home/ubuntu
-    owner: ubuntu
-    group: ubuntu
+  - object: /home/ec2-user
+    owner: ec2-user
+    group: ec2-user
     type:
       - directory
       - file
