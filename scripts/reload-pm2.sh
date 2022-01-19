@@ -1,3 +1,3 @@
 #!/bin/bash
-cd ~/aws-codedeploy
+cd ~/aws-acebookDeployW3Team2
 pm2 startOrReload app.js 
