@@ -2,11 +2,11 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/aws-codedeploy
+    destination: /home/ec2user/aws-codedeploy
 permissions:
-  - object: /home/ubuntu
-    owner: ubuntu
-    group: ubuntu
+  - object: /home/ec2user
+    owner: ec2user
+    group: ec2user
     type:
       - directory
       - file
