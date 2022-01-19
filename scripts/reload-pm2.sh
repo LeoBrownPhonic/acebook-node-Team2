@@ -1,3 +1,3 @@
 #!/bin/bash
-cd ~/acebookDeployW3Team2
+cd ~/ec2-user/acebookDeployW3Team2
 npm run start
