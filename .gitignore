@@ -67,3 +67,4 @@ cypress/videos
 # AWS pem
 
 AWS-acebook-v2.pem
+AWS-acebook.pem
