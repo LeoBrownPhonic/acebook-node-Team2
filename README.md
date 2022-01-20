@@ -79,7 +79,7 @@ https://trello.com/b/geFxDONe/week3team2
 
 The server must be running locally with test configuration for the
 integration tests to pass.
-```
+``
 npm run start:test
 ```
 This starts the server on port `3030` and uses the `acebook_test` MongoDB database,
