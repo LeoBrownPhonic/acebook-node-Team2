@@ -1,9 +1,5 @@
 #!/bin/bash
-cd ..
-cd ..
-pwd
-cd .nvm
-. nvm.sh
+. /.nvm/nvm.sh
 
 cd /home/ec2-user/acebookDeployW3Team2
 
