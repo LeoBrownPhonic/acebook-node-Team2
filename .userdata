@@ -1,0 +1,33 @@
+#!/bin/bash
+echo "THIS IS A NEW USER DATA RUN"
+yum -y update
+yum install -y ruby
+yum install -y aws-cli
+aws s3 cp s3://aws-codedeploy-eu-west-2/latest/install . --region eu-west-2
+chmod +x ./install
+./install auto
+
+MONGO=$'[mongodb-org-5.0]\nname=MongoDB Repository\nbaseurl=https://repo.mongodb.org/yum/amazon/2/mongodb-org/5.0/x86_64/\ngpgcheck=1\nenabled=1\ngpgkey=https://www.mongodb.org/static/pgp/server-5.0.asc'
+
+touch /etc/yum.repos.d/mongodb-org-5.0.repo
+echo "$MONGO" >> /etc/yum.repos.d/mongodb-org-5.0.repo
+
+yum -y update
+yum install -y mongodb-org
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+cd .nvm
+. nvm.sh
+
+ NVMINSTALL=$'export NVM_DIR=\"/.nvm\"\n[ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\"\n[ -s \"$NVM_DIR/bash_completion\" ] && \\. \"$NVM_DIR/bash_completion\"'
+
+echo "$NVMINSTALL" >> /home/ec2-user/.bash_profile
+
+. /home/ec2-user/.bashrc
+
+
+nvm install 12.14.1
+node -e "console.log('Running Node.js ' + process.version)"
+
+npm install pm2 -g
+npm install nodemon -g
