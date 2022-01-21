@@ -18,7 +18,7 @@ jobs:
         node-version: [12.14.1]
         mongodb-version: [4.2]
         appname: ["acebookDeployW3Team2"]
-        deploy-group: ["Week3Team2"]
+        deploy-group: ["MoreAutomatedDeploymentGroup"]
         s3-bucket: ["acebookwk3team2"]
         s3-filename: ["staging-aws-codedeploy-${{ github.sha }}"]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
